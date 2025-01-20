@@ -49,7 +49,7 @@ export const friendMessage0: MessageType = {
         name: 'Malyshev Dmitrii', // можно менять
     },
     message: {
-        text: 'Ты первый!', // можно менять
+        text: 'Hello, how are you, what did you do yesterday?!', // можно менять
         time: '23:00', // можно менять
     },
 }

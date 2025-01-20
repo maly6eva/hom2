@@ -1,11 +1,25 @@
 .App {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     --header_height: 60px;
 }
 
 .hw {
-
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 20px;
 }
 
 .hwTitle {
-
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
