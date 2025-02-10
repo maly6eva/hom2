@@ -40,7 +40,7 @@ function Affair({affair, deleteAffairCallback}: AffairPropsType) {
             >
                 {/*текст кнопки могут изменить студенты*/}
 
-                {/**/}
+                X
             </button>
         </div>
     )
