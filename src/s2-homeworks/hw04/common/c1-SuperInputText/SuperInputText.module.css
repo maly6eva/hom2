@@ -1,14 +1,24 @@
-.input:focus {
-    color: #f17a03;
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .input {
     height: 30px;
     width: 300px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s, color 0.3s;
+    color: #7365cb; /* суперинпут по умолчанию */
 }
 
-.inputWrapper {
-    color: red;
+.input:focus {
+    border-color: #d01a1a;
+    color: #d01a1a;
 }
 
 .superInput {
@@ -16,12 +26,16 @@
 }
 
 .errorInput {
-    color: #2d651d;
+    border-color: #981616;
+    color: #830b0b;
 }
 
 .errorInput:focus {
+    border-color: #f31111;
 }
 
 .error {
-    color: #1a29d0;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #cc2126;
 }
