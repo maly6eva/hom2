@@ -26,7 +26,7 @@ export const Header: FC<PropsType> = ({handleOpen}) => {
             <div id={'hw5-header'} className={s.header}>
                 <img
                     src={burgerIcon}
-                    id={'hw5-burger-menu'}
+                    id={'hw5-menu-open'}
                     className={s.burgerMenuIcon}
                     onClick={handleOpen}
                     alt={'open menu'}
