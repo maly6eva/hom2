@@ -22,7 +22,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <img
                         src={closeIcon}
                         alt="close sidebar"
-                        id={'hw5-burger-menu'}
+                        id={'hw5-menu-close'}
                     />
                 </button>
 
