@@ -1,23 +1,54 @@
+
 [data-theme='1'] {
     --color: #000000;
-    --background: #FFFFFF;
+    --background: #ffffff;
+    --border-color: #d9d9d9;
+    --select-bg: #ffffff;
 }
 
 [data-theme='2'] {
     --color: #000000;
-    --background: #DDEEFF;
+    --background: #ddeeff;
+    --border-color: #7faedb;
+    --select-bg: #ffffff;
 }
 
 [data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #212A34;
+    --color: #ffffff;
+    --background: #212a34;
+    --border-color: #3a4756;
+    --select-bg: #2c3642;
 }
+
+/* ОСНОВА */
 
 html {
     background-color: var(--background);
     color: var(--color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.select {
+/* Чтобы фон точно растягивался */
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--color);
+}
 
+/* SELECT */
+
+.select {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--select-bg);
+    color: var(--color);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 150, 255, 0.4);
 }
