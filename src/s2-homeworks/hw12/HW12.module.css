@@ -10,7 +10,7 @@
     --color: #000000;
     --background: #ddeeff;
     --border-color: #7faedb;
-    --select-bg: #ffffff;
+    --select-bg: #ddeeff
 }
 
 [data-theme='3'] {
@@ -28,24 +28,19 @@ html {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Чтобы фон точно растягивался */
-body {
-    margin: 0;
-    background-color: var(--background);
-    color: var(--color);
-}
-
 /* SELECT */
 
 .select {
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 4px 12px;
+    border-radius: 4px;
     border: 1px solid var(--border-color);
     background-color: var(--select-bg);
     color: var(--color);
     font-size: 14px;
     cursor: pointer;
     transition: all 0.2s ease;
+    height: 26px;
+    width: 290px;
 }
 
 .select:focus {
