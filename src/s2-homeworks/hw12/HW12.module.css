@@ -1,7 +1,6 @@
 
 [data-theme='1'] {
     --color: #000000;
-    --background: rgba(0, 0, 0, 0);
     --border-color: #d9d9d9;
     --select-bg: #ffffff;
 }
@@ -23,8 +22,7 @@
 /* ОСНОВА */
 
 html {
-    --background: rgba(0, 0, 0, 0);
-    background-color: var(--background);
+    background-color: var(--background, transparent);
     color: var(--color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
