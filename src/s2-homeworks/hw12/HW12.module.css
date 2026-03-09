@@ -1,24 +1,27 @@
-[data-theme='1'] {
-    --color: #000000;
-    --border-color: #d9d9d9;
-    --select-bg: #ffffff;
-    --background: #ffffff;
-}
-
-[data-theme='2'] {
-    --color: #000000;
-    --background: #ddeeff;
-}
-
-[data-theme='3'] {
-    --color: #ffffff;
-    --background: #212a34;
-}
-
 html {
+    --background: #ffffff;
+    --color: #000000;
+
     background-color: var(--background);
     color: var(--color);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme='1'] {
+    --background: rgb(217, 217, 217);
+    --color: #000000;
+    --border-color: #d9d9d9;
+    --select-bg: #ffffff;
+}
+
+html[data-theme='2'] {
+    --background: rgb(221, 238, 255);
+    --color: #000000;
+}
+
+html[data-theme='3'] {
+    --background: rgb(33, 42, 52);
+    --color: #ffffff;
 }
 
 .select {

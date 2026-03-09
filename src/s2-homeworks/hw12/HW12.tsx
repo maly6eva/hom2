@@ -31,7 +31,6 @@ const HW12 = () => {
     const change = (id: number) => {
         dispatch(changeThemeId(id))
     }
-
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''
     }, [themeId])
