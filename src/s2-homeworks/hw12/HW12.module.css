@@ -1,25 +1,29 @@
+html {
+    --background: rgba(255, 255, 255, 0.345);
+    --color: #000000;
+    --border-color: #d9d9d9;
+    --select-bg: #ffffff;
+
+    background-color: var(--background);
+    color: var(--color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 [data-theme='1'] {
     --color: #000000;
     --border-color: #d9d9d9;
     --select-bg: #ffffff;
-    --background: #ffffff;
+    --background: rgba(255, 255, 255, 0.345);
 }
 
 [data-theme='2'] {
     --color: #000000;
-    --background: rgba(221, 238,255, 1);
+    --background: rgba(221, 238, 255, 1);
 }
 
 [data-theme='3'] {
     --color: #ffffff;
     --background: rgba(33, 42, 52, 1);
-}
-
-html {
-    background-color: var(--background);
-    color: var(--color);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .select {
