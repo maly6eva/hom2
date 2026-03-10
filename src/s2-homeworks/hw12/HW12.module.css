@@ -1,27 +1,25 @@
-html {
-    --background: #ffffff;
-    --color: #000000;
 
-    background-color: var(--background);
-    color: var(--color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-html[data-theme='1'] {
-    --background: rgb(217, 217, 217);
+[data-theme='1'] {
     --color: #000000;
     --border-color: #d9d9d9;
     --select-bg: #ffffff;
+    --background: #ffffff;
 }
 
-html[data-theme='2'] {
-    --background: rgb(221, 238, 255);
+[data-theme='2'] {
     --color: #000000;
+    --background: rgba(221, 238,255, 1);
 }
 
-html[data-theme='3'] {
-    --background: rgb(33, 42, 52);
+[data-theme='3'] {
     --color: #ffffff;
+    --background: rgba(33, 42, 52, 1);
+}
+
+html {
+    background-color: var(--background);
+    color: var(--color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .select {
@@ -41,3 +39,4 @@ html[data-theme='3'] {
     outline: none;
     box-shadow: 0 0 0 2px rgba(100, 150, 255, 0.4);
 }
+
