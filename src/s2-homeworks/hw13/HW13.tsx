@@ -42,24 +42,24 @@ const HW13 = () => {
                 setInfo(res.data.info)
             })
             .catch((e) => {
-                if (e.response?.status === 400) {
-                    setCode('Ошибка 400!')
-                    setImage(error400)
-                }
+                if (e.response) {
+                    if (e.response.status === 400) {
+                        setCode('Ошибка 400!')
+                        setImage(error400)
+                    }
 
-                if (e.response?.status === 500) {
-                    setCode('Ошибка 500!')
-                    setImage(error500)
-                }
-
-                if (!e.response) {
+                    if (e.response.status === 500) {
+                        setCode('Ошибка 500!')
+                        setImage(error500)
+                    }
+                    setImage(errorUnknown)
+                    setText(e.response?.data?.errorText || 'Error')
+                    setInfo(e.response?.data?.info || 'Network error AxiosError')
+                } else {
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText('Network Error')
-                    setInfo('AxiosError')
-                } else {
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
+                    setInfo('Error')
                 }
             })
             .finally(() => {
