@@ -22,49 +22,51 @@ const HW13 = () => {
     const [loading, setLoading] = useState<boolean>(false)
 
     const send = (x?: boolean | null) => () => {
-
-        if (x === null) {
-            setCode('Error!')
-            setImage(errorUnknown)
-            setText('Network Error')
-            setInfo('AxiosError')
-            return
-        }
-
-        const url = 'https://samurai.it-incubator.io/api/3.0/homework/test'
-
         setCode('')
         setImage('')
         setText('')
         setInfo('...loading')
         setLoading(true)
 
-        axios
-            .post(url, { success: x })
-            .then((res) => {
-                setCode('Код 200!')
-                setImage(success200)
-                setText(res.data.errorText)
-                setInfo(res.data.info)
-            })
-            .catch((e) => {
-
-                if (e.response?.status === 400) {
-                    setCode('Ошибка 400!')
-                    setImage(error400)
-                }
-
-                if (e.response?.status === 500) {
-                    setCode('Ошибка 500!')
-                    setImage(error500)
-                }
-
-                setText(e.response.data.errorText)
-                setInfo(e.response.data.info)
-            })
-            .finally(() => {
+        // 👇 ВАЖНО: вся логика уходит в macrotask
+        setTimeout(() => {
+            if (x === null) {
+                setCode('Error!')
+                setImage(errorUnknown)
+                setText('Network Error')
+                setInfo('AxiosError')
                 setLoading(false)
-            })
+                return
+            }
+
+            const url = 'https://samurai.it-incubator.io/api/3.0/homework/test'
+
+            axios
+                .post(url, { success: x })
+                .then((res) => {
+                    setCode('Код 200!')
+                    setImage(success200)
+                    setText(res.data.errorText)
+                    setInfo(res.data.info)
+                })
+                .catch((e) => {
+                    if (e.response?.status === 400) {
+                        setCode('Ошибка 400!')
+                        setImage(error400)
+                    }
+
+                    if (e.response?.status === 500) {
+                        setCode('Ошибка 500!')
+                        setImage(error500)
+                    }
+
+                    setText(e.response?.data?.errorText || 'Network Error')
+                    setInfo(e.response?.data?.info || 'AxiosError')
+                })
+                .finally(() => {
+                    setLoading(false)
+                })
+        }, 0) // 👈 КЛЮЧЕВОЕ
     }
 
     return (
