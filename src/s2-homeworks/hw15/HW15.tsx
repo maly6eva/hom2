@@ -47,8 +47,9 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: ParamsType) => {
         setLoading(true)
+
         getTechs(params)
             .then((res) => {
                 setTechs(res?.data.techs || [])
@@ -56,11 +57,6 @@ const HW15 = () => {
             })
             .finally(() => {
                 setLoading(false)
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
             })
     }
 
@@ -68,13 +64,12 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
 
-        const queryParams = {
+        sendQuery({
             sort,
             page: newPage,
             count: newCount,
-        }
+        })
 
-        sendQuery(queryParams)
         setSearchParams({
             sort,
             page: String(newPage),
@@ -95,13 +90,12 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1)
 
-        const queryParams = {
+        sendQuery({
             sort: newSort,
             page: 1,
             count,
-        }
+        })
 
-        sendQuery(queryParams)
         setSearchParams({
             sort: newSort,
             page: '1',
@@ -119,10 +113,6 @@ const HW15 = () => {
     }
 
     useEffect(() => {
-        // const params = Object.fromEntries(searchParams)
-        // sendQuery({page: params.page, count: params.count})
-        // setPage(+params.page || 1)
-        // setCount(+params.count || 4)
         const params = Object.fromEntries(searchParams)
 
         const initSort = params.sort || ''
